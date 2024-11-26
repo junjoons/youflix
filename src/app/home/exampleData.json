@@ -1,4 +1,4 @@
-const exampleData = {
+{
     "kind": "youtube#searchListResponse",
     "etag": "etag_value",
     "nextPageToken": "next_page_token",
@@ -44,38 +44,5 @@ const exampleData = {
             }
         }
     ]
-};
-
-let vidList: Vid[] = [];
+}
   
-class Vid {
-    title:string = '';
-    thumbnailUrl:string = '';
-    youtuberName:string = '';
-
-    constructor (title:string, thumbnailUrl:string, youtuberName:string) {
-        this.title = title;
-        this.thumbnailUrl = thumbnailUrl;
-        this.youtuberName = youtuberName;
-    }
-}
-
-exampleData.items.forEach((index) => {
-    // 여기서 새로운 변수 선언하면 안되는걸까?
-    const title = index.snippet.title;
-    const thumbnailUrl = index.snippet.thumbnails.high.url;
-    const channelTItle = index.snippet.channelTitle
-    const vid = new Vid (title, thumbnailUrl, channelTItle);
-    vidList.push(vid);
-    console.log(vidList);
-})
-
-export default function SimilarVidRecommendation() {
-    return (
-        <div>
-            {vidList.forEach((index) => {
-                index.title...?
-            })}
-        </div>
-    )
-}
