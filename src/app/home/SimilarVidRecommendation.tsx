@@ -73,9 +73,9 @@ exampleData.items.forEach((index) => {
 export default function SimilarVidRecommendation() {
     return (
         <div>
-            {vidList.forEach((index) => {
-                index.title...?
-            })}
+            {vidList.map((vid, index) => ( // () => (...)는 () => {return(...)}을 대체
+                <div key={index}>{vid.title}</div>
+            ))}
         </div>
     )
 }
