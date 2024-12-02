@@ -1,3 +1,5 @@
+/*
+
 //NEEDS IMPLEMENTATION
 
 import axios from "axios";
@@ -119,4 +121,13 @@ const fetchRelatedVid = async() => {
             )
         }
         
+}
+
+
+*/
+
+export default function SimilarVidRecommendation() {
+    return (
+        <h2>Similar Video Recommendation</h2>
+    )
 }
