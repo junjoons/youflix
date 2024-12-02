@@ -1,4 +1,5 @@
 import NavigationBar from "./components/Navigation"
+import "./global.css"
 
 export const metadata = {
   title: 'Next.Js Web App'

@@ -5,18 +5,18 @@ import { useState, useEffect } from "react";
 
 const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
 const BASE_URL = "https://www.googleapis.com/youtube/v3";
-let API_QUERY = '빅헤드' // NEEDS IMPLEMENTATION
 
-export default function ChannelVidRecommendation() {
+export default function ChannelVidRecommendation(props) {
     const [vidList, setVidList] = useState([]);
     const [status, setStatus] = useState('loading');
+    const query = props.query;
 
     const fetchRelatedVid = async() => {
         try {
             const response = await axios.get(`${BASE_URL}/search`, {
                 params: {
                     part: "snippet",
-                    q: API_QUERY,
+                    q: query,
                     type: "video",
                     maxResults: 10,
                     key: API_KEY,
