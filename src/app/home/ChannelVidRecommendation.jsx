@@ -9,7 +9,7 @@ const BASE_URL = "https://www.googleapis.com/youtube/v3";
 export default function ChannelVidRecommendation(props) {
     const [vidList, setVidList] = useState([]);
     const [status, setStatus] = useState('loading');
-    const query = props.query;
+    const query = props.channelVidRcmdQuery;
 
     const fetchRelatedVid = async() => {
         try {
@@ -25,7 +25,7 @@ export default function ChannelVidRecommendation(props) {
             const result = response.data.items.map((element) => (
                 {
                     title: element.snippet.title,
-                    thumbnailUrl: element.snippet.thumbnailUrl,
+                    thumbnailUrl: element.snippet.thumbnails.high.url,
                     channelTitle: element.snippet.channelTitle
                 }
             ));

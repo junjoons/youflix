@@ -23,19 +23,19 @@
             "description": "영상 설명",
             "thumbnails": {
                 "default": {
-                "url": "https://example.com/default.jpg",
-                "width": 120,
-                "height": 90
+                    "url": "https://example.com/default.jpg",
+                    "width": 120,
+                    "height": 90
                 },
                 "medium": {
-                "url": "https://example.com/mqdefault.jpg",
-                "width": 320,
-                "height": 180
+                    "url": "https://example.com/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
                 },
                 "high": {
-                "url": "https://example.com/hqdefault.jpg",
-                "width": 480,
-                "height": 360
+                    "url": "https://example.com/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
                 }
             },
             "channelTitle": "유튜버 채널 이름",
