@@ -41,35 +41,24 @@ export default function ChannelVidRecommendation(props) {
         fetchRelatedVid();
     }, []);
 
-    if (status === 'completed') {
-        return (
-            <div>
-                <h3>Similar video that you watched</h3>
-                {vidList.map((vid, index) => ( // () => (...)는 () => {return(...)}을 대체
-                    <div key={index}>{vid.title}</div>
-                ))}
-            </div>
-        )
-    } else if (status === 'error') {
-        return (
-            <div>
-                <h3>Similar video that you watched</h3>
-                <h3>ERROR</h3>
-            </div>
-        )
-    } else if (status === 'loading') {
-        return (
-            <div>
-                <h3>Similar video that you watched</h3>
-                <h3>loading...</h3>
-            </div>
-        )
-    } else {
-        return(
-            <div>
-                <h3>Similar video that you watched</h3>
-                <h3>WHAT THE FUCK IS HAPPENING</h3>
-            </div>
-        )
+    const renderContent = () => {
+        if (status === 'completed') {
+            return (vidList.map((vid, index) => ( // () => (...)는 () => {return(...)}을 대체
+                <div key={index}>{vid.title}</div>
+            )));
+        } else if (status === 'error') {
+            return (<h3>ERROR</h3>);
+        } else if (status === 'loading') {
+            return (<h3>loading...</h3>);
+        } else {
+            return (<h3>WHAT THE FUCK IS HAPPENING</h3>);
+        }
     }
+    
+    return (
+        <div>
+            <h3>Similar video that you watched</h3>
+            {renderContent()}
+        </div>
+    )
 }
