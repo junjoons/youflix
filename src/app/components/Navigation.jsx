@@ -1,7 +1,9 @@
+import Link from "next/link"
+
 export default function NavigationBar() {
     return (
-    <h3>
-        THE NAVIGATION BARRRRR
-    </h3>
+    <div className="nav-bar">
+        <h3>NAVIGATION BAR. TBA.</h3>
+    </div>
     )
 }

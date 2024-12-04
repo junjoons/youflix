@@ -1,0 +1,15 @@
+.nav-bar {
+    width:100vw;
+    height:5vh;
+    border: 2px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    /* justify-content: center; */
+    align-items:center;
+    background-color: black;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 6974;
+}

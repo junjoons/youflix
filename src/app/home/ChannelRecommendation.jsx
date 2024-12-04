@@ -32,7 +32,7 @@ export default function ChannelVidRecommendation(props) {
             setStatus('completed');
         } catch(err) {
             console.log("API threw an error.", err);
-            setStatus('error'); // Will not rerender since 'error' already was 'true', just for code symmetry
+            setStatus('error');
         }
     }
 
@@ -43,6 +43,7 @@ export default function ChannelVidRecommendation(props) {
     if (status === 'completed') {
         return (
             <div>
+                <h3>Channel recommendation</h3>
                 {vidList.map((vid, index) => ( // () => (...)는 () => {return(...)}을 대체
                     <div key={index}>{vid.title}</div>
                 ))}
@@ -51,18 +52,21 @@ export default function ChannelVidRecommendation(props) {
     } else if (status === 'error') {
         return (
             <div>
+                <h3>Channel recommendation</h3>
                 <h3>ERROR</h3>
             </div>
         )
     } else if (status === 'loading') {
         return (
             <div>
+                <h3>Channel recommendation</h3>
                 <h3>loading...</h3>
             </div>
         )
     } else {
         return(
             <div>
+                <h3>Channel recommendation</h3>
                 <h3>WHAT THE FUCK IS HAPPENING</h3>
             </div>
         )

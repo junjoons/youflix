@@ -1,3 +1,12 @@
 .channel-vid-recommendation, .similar-vid-recommendation, .channel-recommendation {
     border: 2px solid black;
 }
+
+body {
+    margin: 0px;
+}
+
+main {
+    padding-left: 10px;
+    padding-right: 10px;
+}
