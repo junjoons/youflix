@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import RenderContent from "./RenderContent";
 
 const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
 const BASE_URL = "https://www.googleapis.com/youtube/v3";
@@ -24,6 +25,7 @@ export default function ChannelVidRecommendation(props) {
             });
             const result = response.data.items.map((element) => (
                 {
+                    id: element.id.videoId,
                     title: element.snippet.title,
                     thumbnailUrl: element.snippet.thumbnails.high.url,
                     channelTitle: element.snippet.channelTitle
@@ -40,25 +42,11 @@ export default function ChannelVidRecommendation(props) {
     useEffect(() => {
         fetchRelatedVid();
     }, []);
-
-    const renderContent = () => {
-        if (status === 'completed') {
-            return (vidList.map((vid, index) => ( // () => (...)는 () => {return(...)}을 대체
-                <div key={index}>{vid.title}</div>
-            )));
-        } else if (status === 'error') {
-            return (<h3>ERROR</h3>);
-        } else if (status === 'loading') {
-            return (<h3>loading...</h3>);
-        } else {
-            return (<h3>WHAT THE FUCK IS HAPPENING</h3>);
-        }
-    }
     
     return (
         <div>
             <h3>Similar video that you watched</h3>
-            {renderContent()}
+            <RenderContent title="similar-vid-recommendation" status={status} vidList={vidList} />
         </div>
     )
 }

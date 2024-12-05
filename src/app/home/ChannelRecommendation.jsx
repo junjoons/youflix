@@ -2,15 +2,15 @@
 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import RenderContent from "./RenderContent";
 
 const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
 const BASE_URL = "https://www.googleapis.com/youtube/v3";
 
 export default function ChannelVidRecommendation(props) {
-    const [vidList, setVidList] = useState([]);
+    const [vidList, setVidList] = useState([]); //"vid"라고 하면 안되긴 하는데 고치기 귀찮음
     const [status, setStatus] = useState('loading');
     const query = props.channelRcmdQuery;
-    let content; //i dont want to do this shit
 
     const fetchRelatedVid = async() => {
         try {
@@ -25,6 +25,7 @@ export default function ChannelVidRecommendation(props) {
             });
             const result = response.data.items.map((element) => (
                 {
+                    id: element.id.channelId,
                     title: element.snippet.title,
                     thumbnailUrl: element.snippet.thumbnails.high.url
                 }
@@ -41,24 +42,10 @@ export default function ChannelVidRecommendation(props) {
         fetchRelatedVid();
     }, []);
 
-    const renderContent = () => {
-        if (status === 'completed') {
-            return (vidList.map((vid, index) => ( // () => (...)는 () => {return(...)}을 대체
-                <div key={index}>{vid.title}</div>
-            )));
-        } else if (status === 'error') {
-            return (<h3>ERROR</h3>);
-        } else if (status === 'loading') {
-            return (<h3>loading...</h3>);
-        } else {
-            return (<h3>WHAT THE FUCK IS HAPPENING</h3>);
-        }
-    }
-    
     return (
         <div>
             <h3>Channel recommendation</h3>
-            {renderContent()}
+            <RenderContent title="channel-recommendation" status={status} vidList={vidList} />
         </div>
     )
 }
