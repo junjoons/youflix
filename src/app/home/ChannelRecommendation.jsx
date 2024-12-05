@@ -44,7 +44,7 @@ export default function ChannelVidRecommendation(props) {
 
     return (
         <div>
-            <h3>Channel recommendation</h3>
+            <h3 className="channel-recommendation-title">Channel recommendation</h3>
             <RenderContent title="channel-recommendation" status={status} vidList={vidList} />
         </div>
     )

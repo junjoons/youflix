@@ -42,7 +42,34 @@
             "liveBroadcastContent": "none",
             "publishTime": "2023-01-01T00:00:00Z"
             }
-        }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"XI7nbFXulYBIpL0ayR_gDh3eu1k/abcd1234efgh5678ijkl9012mnop3456\"",
+            "id": {
+              "kind": "youtube#channel",
+              "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw"
+            },
+            "snippet": {
+              "publishedAt": "2007-08-23T00:34:43Z",
+              "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+              "title": "Google Developers",
+              "description": "The Google Developers channel features talks, tips, and updates from the Google Developer Experts and teams.",
+              "thumbnails": {
+                "default": {
+                  "url": "https://yt3.ggpht.com/ytc/AAUvwnh-XXXXXX=s88-c-k-c0xffffffff-no-rj-mo"
+                },
+                "medium": {
+                  "url": "https://yt3.ggpht.com/ytc/AAUvwnh-XXXXXX=s240-c-k-c0xffffffff-no-rj-mo"
+                },
+                "high": {
+                  "url": "https://yt3.ggpht.com/ytc/AAUvwnh-XXXXXX=s800-c-k-c0xffffffff-no-rj-mo"
+                }
+              },
+              "channelTitle": "Google Developers",
+              "liveBroadcastContent": "none",
+              "publishTime": "2007-08-23T00:34:43Z"
+            }
+          }
     ]
 }
-  

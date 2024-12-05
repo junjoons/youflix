@@ -1,5 +1,10 @@
-.channel-vid-recommendation, .similar-vid-recommendation, .channel-recommendation {
+.channel-vid-recommendation-body, .similar-vid-recommendation-body, .channel-recommendation-body {
     border: 2px solid black;
+    padding: 10px;
+}
+
+.channel-vid-recommendation-title, .similar-vid-recommendation-title, .channel-recommendation-title {
+    margin: 0px;
 }
 
 body {
@@ -7,6 +12,5 @@ body {
 }
 
 main {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
 }

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function RenderContent({title, status, vidList}) { // destructing bc props come in array
     if (status === 'completed') {
         return (
@@ -5,6 +7,7 @@ export default function RenderContent({title, status, vidList}) { // destructing
                 <ul>
                     {vidList.map((vid, index) => ( // () => (...)는 () => {return(...)}을 대체
                     <li key={index}>
+                        <Image src={vid.thumbnailUrl} alt={vid.title} width={1280} height={720} />
                         {title === 'channel-recommendation' ? 
                             (<a href={`https://www.youtube.com/channel/${vid.id}`} target="_blank" rel="noopener noreferrer" >
                                 {vid.title} [{vid.id}]

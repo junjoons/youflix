@@ -1,9 +1,9 @@
 .nav-bar {
-    width:100vw;
+    width:99vw;
     height:5vh;
-    border: 2px solid black;
-    padding-left: 10px;
-    padding-right: 10px;
+    /* border-top: 2px solid black; */
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
     display: flex;
     /* justify-content: center; */
     align-items:center;

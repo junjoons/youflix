@@ -45,7 +45,7 @@ export default function ChannelVidRecommendation(props) {
     
     return (
         <div>
-            <h3>Similar video that you watched</h3>
+            <h3 title="similar-vid-recommendation-title">Similar video that you watched</h3>
             <RenderContent title="similar-vid-recommendation" status={status} vidList={vidList} />
         </div>
     )

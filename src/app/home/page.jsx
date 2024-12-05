@@ -8,14 +8,13 @@ const VIDEO_QUERY = '극사실주의 FPS게임에 좀비모드가 나왔습니�
 export default function Home() {
   return (
       <div>
-        <h1>This is the Home Page. haha, get it?</h1>
-        <div className="channel-vid-recommendation">
+        <div className="channel-vid-recommendation-body">
           <ChannelVidRecommendation channelVidRcmdQuery={CHANNEL_QUERY}/>
         </div>
-        <div className="similar-vid-recommendation">
+        <div className="similar-vid-recommendation-body">
           <SimilarVidRecommendation similarVidRcmdQuery={VIDEO_QUERY} />
         </div>
-        <div className="channel-recommendation">
+        <div className="channel-recommendation-body">
           <ChannelRecommendation channelRcmdQuery={CHANNEL_QUERY}/>
         </div>
       </div>
