@@ -15,3 +15,5 @@
 - [Chore] 문서 수정, 파일 정리 등
 
 - [Perf] 성능 개선
+
+- [Config] config 파일 수정
