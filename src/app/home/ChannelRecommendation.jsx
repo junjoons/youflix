@@ -40,7 +40,7 @@ export default function ChannelVidRecommendation(props) {
 
     useEffect(() => {
         fetchRelatedVid();
-    }, []);
+    }, [query]); // prop으로 받는 query가 바뀔때마다 rerender
 
     return (
         <div>

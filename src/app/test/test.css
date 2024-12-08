@@ -1,0 +1,11 @@
+.testingImageContainer {
+    width: 480px;
+    height: 270px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.testingImage {
+    width: 480px;
+}

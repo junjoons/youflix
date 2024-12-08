@@ -41,11 +41,11 @@ export default function ChannelVidRecommendation(props) {
 
     useEffect(() => {
         fetchRelatedVid();
-    }, []);
+    }, [query]); // prop으로 받는 query가 바뀔때마다 rerender
     
     return (
         <div>
-            <h3 title="similar-vid-recommendation-title">Similar video that you watched</h3>
+            <h3 className="similar-vid-recommendation-title">Similar video that you watched</h3>
             <RenderContent title="similar-vid-recommendation" status={status} vidList={vidList} />
         </div>
     )

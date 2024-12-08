@@ -14,3 +14,15 @@ body {
 main {
     padding: 10px;
 }
+
+.vidThumbnailContainer {
+    width: 480px;
+    height: 270px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.vidThumbnailImage {
+    width: 480px;
+}

@@ -7,13 +7,30 @@ export default function RenderContent({title, status, vidList}) { // destructing
                 <ul>
                     {vidList.map((vid, index) => ( // () => (...)는 () => {return(...)}을 대체
                     <li key={index}>
-                        <Image src={vid.thumbnailUrl} alt={vid.title} width={1280} height={720} />
                         {title === 'channel-recommendation' ? 
                             (<a href={`https://www.youtube.com/channel/${vid.id}`} target="_blank" rel="noopener noreferrer" >
+                                <Image 
+                                    src={vid.thumbnailUrl} 
+                                    alt={vid.title} 
+                                    width={200} 
+                                    height={200} 
+                                />
                                 {vid.title} [{vid.id}]
                             </a>) 
                             : 
                             (<a href={`https://www.youtube.com/watch?v=${vid.id}`} target="_blank" rel="noopener noreferrer" >
+                                <div className="vidThumbnailContainer">
+                                    <Image
+                                        className="vidThumbnailImage"
+                                        src={vid.thumbnailUrl} 
+                                        alt={vid.title} 
+                                        width={480} 
+                                        height={270} 
+                                        style={{ objectFit: 'cover' }}
+                                        // fill
+                                        // sizes="(max-width: 768px) 100vw, 480px"
+                                    />
+                                </div>
                                 {vid.title}
                             </a>)
                         }
