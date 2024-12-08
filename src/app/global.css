@@ -26,3 +26,26 @@ main {
 .vidThumbnailImage {
     width: 480px;
 }
+
+.channel-vid-recommendation-list-container, .similar-vid-recommendation-list-container, .channel-recommendation-list-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    list-style-type: none; /* 점을 없앰 */
+    padding: 0px;
+    /* padding-bottom: 10px; */
+    margin: 0px;
+     -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
+     scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
+}
+
+.channel-vid-recommendation-list-container::-webkit-scrollbar,
+.similar-vid-recommendation-list-container::-webkit-scrollbar,
+.channel-recommendation-list-container::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

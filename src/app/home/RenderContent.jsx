@@ -4,7 +4,7 @@ export default function RenderContent({title, status, vidList}) { // destructing
     if (status === 'completed') {
         return (
             <div className={`${title}-list`}>
-                <ul>
+                <ul className={`${title}-list-container`}>
                     {vidList.map((vid, index) => ( // () => (...)는 () => {return(...)}을 대체
                     <li key={index}>
                         {title === 'channel-recommendation' ? 
@@ -15,6 +15,7 @@ export default function RenderContent({title, status, vidList}) { // destructing
                                     width={200} 
                                     height={200} 
                                 />
+                                <br />
                                 {vid.title} [{vid.id}]
                             </a>) 
                             : 
