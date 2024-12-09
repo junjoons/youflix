@@ -4,7 +4,7 @@ export default function RenderContent({title, status, vidList}) { // destructing
     if (status === 'completed') {
         return (
             <div className={`${title}-list`}>
-                <ul className={`${title}-list-container`}>
+                <ul className={`${title}-list__container`}>
                     {vidList.map((vid, index) => ( // () => (...)는 () => {return(...)}을 대체
                     <li key={index}>
                         {title === 'channel-recommendation' ? 
@@ -16,13 +16,15 @@ export default function RenderContent({title, status, vidList}) { // destructing
                                     height={200} 
                                 />
                                 <br />
-                                {vid.title} [{vid.id}]
+                                <h3 className="channel-recommendation__title">
+                                    {vid.title}
+                                </h3>
                             </a>) 
                             : 
                             (<a href={`https://www.youtube.com/watch?v=${vid.id}`} target="_blank" rel="noopener noreferrer" >
-                                <div className="vidThumbnailContainer">
+                                <div className="vid-thumbnail__container">
                                     <Image
-                                        className="vidThumbnailImage"
+                                        className="vid-thumbnail__image"
                                         src={vid.thumbnailUrl} 
                                         alt={vid.title} 
                                         width={480} 
@@ -32,7 +34,9 @@ export default function RenderContent({title, status, vidList}) { // destructing
                                         // sizes="(max-width: 768px) 100vw, 480px"
                                     />
                                 </div>
-                                {vid.title}
+                                <h3 className="vid-recommendation__title">
+                                    {vid.title}
+                                </h3>
                             </a>)
                         }
                     </li>
@@ -41,9 +45,9 @@ export default function RenderContent({title, status, vidList}) { // destructing
             </div>
         );
     } else if (status === 'error') {
-        return (<h3 className={`${title}-error-message`}>ERROR</h3>);
+        return (<h3 className={`${title}__error-message`}>ERROR</h3>);
     } else if (status === 'loading') {
-        return (<h3 className={`${title}-loading-message`}>loading...</h3>);
+        return (<h3 className={`${title}__loading-message`}>loading...</h3>);
     } else {
         return (<h3>WHAT THE FUCK IS HAPPENING</h3>);
     }

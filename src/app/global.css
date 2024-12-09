@@ -1,9 +1,9 @@
-.channel-vid-recommendation-body, .similar-vid-recommendation-body, .channel-recommendation-body {
+.channel-vid-recommendation__body, .similar-vid-recommendation__body, .channel-recommendation__body {
     border: 2px solid black;
     padding: 10px;
 }
 
-.channel-vid-recommendation-title, .similar-vid-recommendation-title, .channel-recommendation-title {
+.channel-vid-recommendation__title, .similar-vid-recommendation__title, .channel-recommendation__title {
     margin: 0px;
 }
 
@@ -15,7 +15,7 @@ main {
     padding: 10px;
 }
 
-.vidThumbnailContainer {
+.vid-thumbnail__title {
     width: 480px;
     height: 270px;
     overflow: hidden;
@@ -23,11 +23,11 @@ main {
     align-items: center;
 }
 
-.vidThumbnailImage {
+.vid-thumbnail__image {
     width: 480px;
 }
 
-.channel-vid-recommendation-list-container, .similar-vid-recommendation-list-container, .channel-recommendation-list-container {
+.channel-vid-recommendation-list__container, .similar-vid-recommendation-list__container, .channel-recommendation-list__container {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
@@ -35,17 +35,42 @@ main {
     padding: 0px;
     /* padding-bottom: 10px; */
     margin: 0px;
-     -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
-     scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
+    -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
+    scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
+    /* justify-content: space-between; */
+    gap: 20px;
 }
 
-.channel-vid-recommendation-list-container::-webkit-scrollbar,
-.similar-vid-recommendation-list-container::-webkit-scrollbar,
-.channel-recommendation-list-container::-webkit-scrollbar {
+.channel-vid-recommendation-list__container::-webkit-scrollbar,
+.similar-vid-recommendation-list__container::-webkit-scrollbar,
+.channel-recommendation-list__container::-webkit-scrollbar {
     display: none;
 }
 
 a {
     text-decoration: none;
     color: black;
+}
+
+.channel-recommendation-list__container a {
+    display: block;
+    width: 200px;
+}
+
+.channel-vid-recommendation-list__container a,
+.similar-vid-recommendation-list__container a {
+    display: block;
+    width: 480px;
+}
+
+.channel-recommendation__title,
+.vid-recommendation__title {
+    margin: 0px;
+    /* 텍스트 오버플로우 적용 시작 */
+    white-space: nowrap;           /* 텍스트를 한 줄로 표시 */
+    overflow: hidden;              /* 넘치는 텍스트 숨김 */
+    text-overflow: ellipsis;       /* 말줄임표(...) 표시 */
+    width: 100%;                    /* 요소의 너비를 부모 요소에 맞춤 */
+    display: block;                /* 요소를 블록 레벨로 설정 */
+    /* 필요에 따라 폰트 크기나 스타일을 추가로 조정할 수 있습니다 */
 }

@@ -19,7 +19,7 @@ export default function ChannelVidRecommendation(props) {
                     part: "snippet",
                     q: query,
                     type: "video",
-                    maxResults: 10,
+                    maxResults: 5,
                     key: API_KEY,
                 },
             });
@@ -45,7 +45,7 @@ export default function ChannelVidRecommendation(props) {
     
     return (
         <div>
-            <h3 className="channel-vid-recommendation-title">Videos related to your favorite channels</h3>
+            <h2 className="channel-vid-recommendation__title">Videos related to your favorite channels</h2>
             <RenderContent title="channel-vid-recommendation" status={status} vidList={vidList} />
         </div>
     )
