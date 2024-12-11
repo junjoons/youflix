@@ -1,4 +1,5 @@
 import Image from "next/image";
+import he from "he";
 
 export default function RenderContent({title, status, vidList}) { // destructing bc props come in array
     if (status === 'completed') {
@@ -11,13 +12,13 @@ export default function RenderContent({title, status, vidList}) { // destructing
                             (<a href={`https://www.youtube.com/channel/${vid.id}`} target="_blank" rel="noopener noreferrer" >
                                 <Image 
                                     src={vid.thumbnailUrl} 
-                                    alt={vid.title} 
+                                    alt={he.decode(vid.title)} 
                                     width={200} 
                                     height={200} 
                                 />
                                 <br />
-                                <h3 className="channel-recommendation__title">
-                                    {vid.title}
+                                <h3 className="channel__title">
+                                    {he.decode(vid.title)}
                                 </h3>
                             </a>) 
                             : 
@@ -26,22 +27,23 @@ export default function RenderContent({title, status, vidList}) { // destructing
                                     <Image
                                         className="vid-thumbnail__image"
                                         src={vid.thumbnailUrl} 
-                                        alt={vid.title} 
-                                        width={480} 
-                                        height={270} 
+                                        alt={he.decode(vid.title)} 
+                                        width={320} 
+                                        height={180} 
                                         style={{ objectFit: 'cover' }}
                                         // fill
                                         // sizes="(max-width: 768px) 100vw, 480px"
                                     />
                                 </div>
                                 <h3 className="vid-recommendation__title">
-                                    {vid.title}
+                                    {he.decode(vid.title)}
                                 </h3>
                             </a>)
                         }
                     </li>
                     ))}
                 </ul>
+                {/* <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> */}
             </div>
         );
     } else if (status === 'error') {

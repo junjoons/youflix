@@ -19,7 +19,7 @@ export default function ChannelVidRecommendation(props) {
                     part: "snippet",
                     q: query,
                     type: "video",
-                    maxResults: 5,
+                    maxResults: 6,
                     key: API_KEY,
                 },
             });
@@ -27,7 +27,7 @@ export default function ChannelVidRecommendation(props) {
                 {
                     id: element.id.videoId,
                     title: element.snippet.title,
-                    thumbnailUrl: element.snippet.thumbnails.high.url,
+                    thumbnailUrl: element.snippet.thumbnails.medium.url,
                     channelTitle: element.snippet.channelTitle
                 }
             ));

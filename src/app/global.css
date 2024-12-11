@@ -1,44 +1,71 @@
-.channel-vid-recommendation__body, .similar-vid-recommendation__body, .channel-recommendation__body {
-    border: 2px solid black;
-    padding: 10px;
+/* 전체 요소에 box-sizing: border-box 적용 및 기본 마진, 패딩 제거 */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
 
-.channel-vid-recommendation__title, .similar-vid-recommendation__title, .channel-recommendation__title {
-    margin: 0px;
+.channel-vid-recommendation__body, 
+.similar-vid-recommendation__body, 
+.channel-recommendation__body {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.channel-vid-recommendation__title, 
+.similar-vid-recommendation__title, 
+.channel-recommendation__title {
+    margin: 5px;
+    margin-left: 0px;
+
+    /* 텍스트 스타일링 */
+    font-size: 30px;
+}
+
+html {
+    height: 100%;
 }
 
 body {
+    height: 100%;
     margin: 0px;
+    background-color: black;    /* 배경 검은색 */
+    color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
-    padding: 10px;
+    flex: 1;
+    overflow-y: auto;
 }
 
 .vid-thumbnail__title {
-    width: 480px;
-    height: 270px;
+    width: 320px;
+    height: 180px;
     overflow: hidden;
     display: flex;
     align-items: center;
 }
 
 .vid-thumbnail__image {
-    width: 480px;
+    width: 320px;
 }
 
-.channel-vid-recommendation-list__container, .similar-vid-recommendation-list__container, .channel-recommendation-list__container {
+.channel-vid-recommendation-list__container, 
+.similar-vid-recommendation-list__container, 
+.channel-recommendation-list__container {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
-    list-style-type: none; /* 점을 없앰 */
+    list-style-type: none;      /* li 기본 중간점을 없앰 */
     padding: 0px;
-    /* padding-bottom: 10px; */
     margin: 0px;
-    -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
-    scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
-    /* justify-content: space-between; */
+    -ms-overflow-style: none;   /* IE 및 Edge에서 스크롤바 숨기기 */
+    scrollbar-width: none;      /* Firefox에서 스크롤바 숨기기 */
     gap: 20px;
+    /* padding-bottom: 10px; */
+    /* justify-content: space-between; */
 }
 
 .channel-vid-recommendation-list__container::-webkit-scrollbar,
@@ -49,7 +76,7 @@ main {
 
 a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .channel-recommendation-list__container a {
@@ -60,17 +87,31 @@ a {
 .channel-vid-recommendation-list__container a,
 .similar-vid-recommendation-list__container a {
     display: block;
-    width: 480px;
+    width: 320px;
 }
 
-.channel-recommendation__title,
+.channel__title, /* uhhh i think i need to work on the namings */
 .vid-recommendation__title {
     margin: 0px;
-    /* 텍스트 오버플로우 적용 시작 */
+    margin-top: 3px;
+
+    /* 텍스트 오버플로우 */
     white-space: nowrap;           /* 텍스트를 한 줄로 표시 */
     overflow: hidden;              /* 넘치는 텍스트 숨김 */
     text-overflow: ellipsis;       /* 말줄임표(...) 표시 */
-    width: 100%;                    /* 요소의 너비를 부모 요소에 맞춤 */
+    width: 100%;                   /* 요소의 너비를 부모 요소에 맞춤 */
     display: block;                /* 요소를 블록 레벨로 설정 */
-    /* 필요에 따라 폰트 크기나 스타일을 추가로 조정할 수 있습니다 */
+}
+
+.main__container {
+    padding: 10px;
+    padding-left: 40px;
+    padding-top: 0px;
+    box-sizing: border-box;
+}
+
+.channel-vid-recommendation-list, 
+.similar-vid-recommendation-list, 
+.channel-recommendation-list {
+    padding-top: 10px;
 }
