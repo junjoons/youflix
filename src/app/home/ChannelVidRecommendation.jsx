@@ -33,14 +33,48 @@ export default function ChannelVidRecommendation(props) {
             ));
             setVidList(result);
             setStatus('completed');
+            localStorage.setItem('channelVidList', JSON.stringify(result));
+            localStorage.setItem('channelVidLastUpdatedTime', new Date().getTime());
+            console.log('Saved channel video list');
         } catch(err) {
             console.log("API threw an error.", err);
             setStatus('error');
         }
     }
 
+    const getRelatedVid = () => {
+        const storedTimeString = localStorage.getItem('channelVidLastUpdatedTime');
+        let needsFetch = false;
+
+        if (storedTimeString) {
+            const storedTime = parseInt(storedTimeString, 10);
+            const currentTime = new Date().getTime();
+            if (currentTime - storedTime >= 5 * 60 * 60 * 1000) {
+                needsFetch = true;
+                console.log(`Will fetch data since ${(currentTime - storedTime) / 60 * 60 * 1000} hours passed since last fetch`);
+            } else {console.log("Will not fetch new data since 5 hours did not pass");}
+        } else {
+            needsFetch = true;
+            console.log("Will fetch new data since nothing was stored in localstorage");
+        }
+
+        if (needsFetch) {
+            fetchRelatedVid();
+        } else {
+            const storedVidList = localStorage.getItem('channelVidList');
+            if (storedVidList) {
+                setVidList(JSON.parse(storedVidList));
+                setStatus('completed');
+            } else {
+                console.log("IDK wtf happened");
+                setStatus('error');
+            }
+        }
+    }
+
+
     useEffect(() => {
-        fetchRelatedVid();
+        getRelatedVid();
     }, [query]); // prop으로 받는 query가 바뀔때마다 rerender
     
     return (

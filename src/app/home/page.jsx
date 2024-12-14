@@ -2,7 +2,7 @@ import SimilarVidRecommendation from "./SimilarVidRecommendation";
 import ChannelRecommendation from "./ChannelRecommendation";
 import ChannelVidRecommendation from "./ChannelVidRecommendation"
 
-const CHANNEL_QUERY = '빅헤드';
+const CHANNEL_QUERY = '오버워치';
 const VIDEO_QUERY = '극사실주의 FPS게임에 좀비모드가 나왔습니다.';
 
 export default function Home() {
