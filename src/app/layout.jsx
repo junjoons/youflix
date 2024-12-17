@@ -1,6 +1,6 @@
-import NavigationBar from "./components/Navigation"
+import NavigationBar from "./components/navigation/Navigation"
 import "./global.css"
-import "./components/navigation.css"
+import "./components/Navigation/navigation.css"
 
 export const metadata = {
   title: 'Next.Js Web App'

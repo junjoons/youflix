@@ -49,7 +49,7 @@ export default function ChannelVidRecommendation(props) {
         if (storedTimeString) {
             const storedTime = parseInt(storedTimeString, 10);
             const currentTime = new Date().getTime();
-            if (currentTime - storedTime >= 5 * 60 * 60 * 1000) {
+            if (currentTime - storedTime >= 6 * 60 * 60 * 1000) {
                 needsFetch = true;
                 console.log(`Will fetch data since ${(currentTime - storedTime) / 60 * 60 * 1000} hours passed since last fetch`);
             } else {console.log("Will not fetch new data since 5 hours did not pass");}

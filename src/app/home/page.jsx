@@ -2,6 +2,7 @@ import SimilarVidRecommendation from "./SimilarVidRecommendation";
 import ChannelRecommendation from "./ChannelRecommendation";
 import ChannelVidRecommendation from "./ChannelVidRecommendation"
 
+const CHANNEL_VID_QUERY = '빅헤드';
 const CHANNEL_QUERY = '오버워치';
 const VIDEO_QUERY = '극사실주의 FPS게임에 좀비모드가 나왔습니다.';
 
@@ -9,7 +10,7 @@ export default function Home() {
   return (
       <div>
         <div className="channel-vid-recommendation__body">
-          <ChannelVidRecommendation channelVidRcmdQuery={CHANNEL_QUERY}/>
+          <ChannelVidRecommendation channelVidRcmdQuery={CHANNEL_VID_QUERY}/>
         </div>
         <div className="similar-vid-recommendation__body">
           <SimilarVidRecommendation similarVidRcmdQuery={VIDEO_QUERY} />
